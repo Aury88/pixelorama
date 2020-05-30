@@ -20,9 +20,10 @@ apps:
       - network
       - network-bind
       - pulseaudio
-      - x11
+      - wayland
+      - unity7
       - desktop
-      - joystick
+      - desktop-legacy
       - home
 
 parts:
