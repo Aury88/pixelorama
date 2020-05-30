@@ -1,0 +1,50 @@
+name: pixelorama
+base: core18
+version: '0.7.0'
+summary: Pixelorama sprite editor
+description: |
+  Free & open-source 2D sprite editor, made by Orama Interactive in the Godot Engine, using GDScript!
+
+
+icon: snap/gui/pixelorama.png
+grade: stable
+confinement: strict
+
+apps:
+  pixelorama:
+    command: desktop-launch "$SNAP/Pixelorama.x86_64"
+    environment:
+      LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio"
+    plugs:
+      - opengl
+      - network
+      - network-bind
+      - pulseaudio
+      - x11
+      - desktop
+      - joystick
+      - home
+
+parts:
+  editor:
+    plugin: dump
+    source: files/
+    after: [desktop-glib-only]
+    stage-packages:
+      - libgl1-mesa-dri
+      - libglu1-mesa
+      - libgl1-mesa-glx
+      - libpulse0
+      - libxcursor1
+      - libxinerama1
+      - libxrandr2
+      - libxi6
+      - libasound2
+  desktop-glib-only:  
+        build-packages:
+          - libglib2.0-dev
+        plugin: make
+        source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
+        source-subdir: glib-only
+        stage-packages:
+          - libglib2.0-bin
