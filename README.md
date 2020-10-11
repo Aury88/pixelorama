@@ -54,7 +54,7 @@ Pixelorama uses a GDNative addon for gif exporting, since it's not possible to d
 
 Note that the addon only works in Windows and Linux platforms, for the time being. Pixelorama should run without it fine on other platforms. 
 
-## Current features as of version v0.7:
+## Current features as of version v0.8:
 
 - Choosing between 7 tools – pencil, eraser, fill bucket, lighten/darken, color picker, rectangle select and zoom– and mapping them to both of your left and right mouse buttons.
 - Are you an animator? Pixelorama has its own animation timeline just for you! You can work at an individual cel level, where each cel refers to a unique layer and frame. Supports onion skinning, cel linking, motion drawing and frame grouping with tags.
